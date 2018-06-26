@@ -46,6 +46,6 @@ Restart-service snmp**
 Remove-PSSession $session
 
 # add host to libremns
-Invoke-RestMethod -Uri $deviceurl -Headers $headers -method post -body $body -ContentType "application/json" # |select -ExpandProperty devices |ogv
+Invoke-RestMethod -Uri $deviceurl -Headers $headers -method post -body $body -ContentType "application/json" 
 
 
