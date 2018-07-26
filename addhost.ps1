@@ -34,7 +34,7 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SNMP\Parameters\Va
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SNMP\Parameters\PermittedManagers" /v 2 /t REG_SZ /d "$using:librenmsip" /f | Out-Null 
 Restart-service snmp** 
 Import-Module NetSecurity 
-New-NetFirewallRule -Name Allow_Ping -DisplayName “Allow Ping”  -Description “server reageert op ping ICMPv4” -Protocol ICMPv4 -IcmpType 8 -Enabled True -Profile Any -Action Allow
+New-NetFirewallRule -Name Allow_Ping -DisplayName “Allow Ping”  -Description “Ping ICMPv4” -Protocol ICMPv4 -IcmpType 8 -Enabled True -Profile Any -Action Allow
 }
 
 
